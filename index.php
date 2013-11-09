@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>PHP5 Hash Check</title>
-	<meta name="description" content="A speed benchmark and security comparison for all the available Hash Algorithms for any PHP version >=5.1.2">
-	<meta name="keywords" content="speed benchmark security comparison available Hash Algorithms PHP version">
+	<meta name="description" content="A speed benchmark and security comparison for all the available Hash Algorithms for any PHP version >=5.1.2 with advisory notices and assisting rankings.">
+	<meta name="keywords" content="speed benchmark security comparison available Hash Algorithms PHP version >=5.1.2 > = 5.1.2 5 1 2 advisory notices assisting rankings.">
 	<style>
 		body {
 			max-width: 980px;
@@ -36,7 +36,7 @@
 <body>
 	<div class="description">
 		<h1>PHP5 Hash Check</h1>
-		<p class="caption">A speed benchmark and security comparison for all the available Hash Algorithms for any PHP version >=5.1.2</p>
+		<p class="caption">A speed benchmark and security comparison for all the available Hash Algorithms for any PHP version >=5.1.2 with advisory notices and assisting rankings.</p>
 		<br>
 		<p>This page serves to speed benchmark all the available Hash Algorithms for this PHP version (<?php echo phpversion(); ?>). The PHP Script (<a href="https://github.com/eustasy/hash-check">Source available on GitHub</a>) randomly generates a 18 character password and 64 character salt from the following digits.</p>
 		<br>
