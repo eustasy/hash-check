@@ -63,7 +63,7 @@
 		<h1>PHP5 Hash Check</h1>
 		<p class="caption">A speed benchmark and security comparison for all the available Hash Algorithms for any PHP version >=5.1.2 with advisory notices and assisting rankings.</p>
 		<br>
-		<p>This page serves to speed benchmark all the available Hash Algorithms for this PHP version (<?php echo phpversion(); ?>). The PHP Script (<a href="https://github.com/eustasy/hash-check">Source available on GitHub</a>) randomly generates a 18 character password and 64 character salt from the following digits.</p>
+		<p>This page serves to speed benchmark all the available Hash Algorithms for this PHP version (<?php echo phpversion(); ?>). The PHP Script (<a href="https://github.com/eustasy/labs-hash-check">Source available on GitHub</a>) randomly generates a 18 character password and 64 character salt from the following digits.</p>
 		<br>
 		<code>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 !"£$%^&*()-_+=|`¬,.<>/?~#[]{}@'\</code>
 		<p class="caption">Like you'd be so lucky as to get a user with a random password generated from these.</p>
