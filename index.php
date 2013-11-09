@@ -1,10 +1,33 @@
 <!DocType html>
 <html>
 <head>
+
 	<meta charset="UTF-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="cleartype" content="on">
+
 	<title>PHP5 Hash Check</title>
+
 	<meta name="description" content="A speed benchmark and security comparison for all the available Hash Algorithms for any PHP version >=5.1.2 with advisory notices and assisting rankings.">
-	<meta name="keywords" content="speed benchmark security comparison available Hash Algorithms PHP version >=5.1.2 > = 5.1.2 5 1 2 advisory notices assisting rankings.">
+	<meta name="keywords" content="speed benchmark security comparison available Hash Algorithms PHP version >=5.1.2 > = 5.1.2 5 1 2 advisory notices assisting rankings eustasy labs org ltd uk">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="author" content="https://google.com/+LewisGoddard">
+	<link rel="publisher" href="https://plus.google.com/+EustasyOrg">
+	<link rel="canonical" href="http://labs.eustasy.org/hash-check/">
+	<link rel="icon" href="http://labs.eustasy.org/favicon.ico">
+	<link rel="shortcut icon" href="http://labs.eustasy.org/favicon.ico">
+
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-28932148-12', 'eustasy.org');
+		ga('send', 'pageview');
+	</script>
+
 	<style>
 		body {
 			max-width: 980px;
@@ -32,8 +55,10 @@
 		.header.headerSortUp:after { content: " ↑"; }
 		.header.headerSortDown:after { content: " ↓"; }
 	</style>
+
 </head>
 <body>
+
 	<div class="description">
 		<h1>PHP5 Hash Check</h1>
 		<p class="caption">A speed benchmark and security comparison for all the available Hash Algorithms for any PHP version >=5.1.2 with advisory notices and assisting rankings.</p>
@@ -48,8 +73,8 @@
 		<code>$Hash_Result = hash( $Hash_Algo, hash( $Hash_Algo, $Pass, false) . hash( $Hash_Algo, $Salt, false ), false );</code>
 		<p class="caption">This is how most of our user logins are handled, so provides a realistic benchmark.</p>
 		<br>
-		<p></p>
 	</div>
+
 	<table id="sort" class="tablesorter">
 		<thead>
 			<tr>
@@ -163,8 +188,10 @@
 ?>
 		</tbody>
 	</table>
+
 	<script src="http://labs.eustasy.org/jquery.min.js"></script>
 	<script src="http://labs.eustasy.org/jquery.tablesorter.min.js"></script>
 	<script>$(document).ready(function() { $("#sort").tablesorter( {sortList: [[1,1], [3,1]]} ); });</script>
+
 </body>
 </html>
