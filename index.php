@@ -149,9 +149,7 @@
 		} elseif(
 			$Hash_Algo == 'ripemd128' ||
 			$Hash_Algo == 'ripemd256' ||
-			$Hash_Algo == 'sha1' ||
-			$Hash_Algo == 'snefru' ||
-			$Hash_Algo == 'snefru256' ) {
+			$Hash_Algo == 'sha1' ) {
 			echo ' class="hi insecure">Warning: Questionable Security.';
 		} elseif(
 			$Hash_Algo == 'md2' ||
