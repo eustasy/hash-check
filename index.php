@@ -188,7 +188,14 @@
 		</tbody>
 	</table>
 
-	<script src="http://labs.eustasy.org/jquery.min.js"></script>
+	<!--[if lt IE 9]> 
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript">window.jQuery || document.write('<script src="http://labs.eustasy.org/jquery-1.10.2.min.js"><\/script>');</script>
+	<![endif]-->
+	<!--[if IE 9]><!--> 
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="http://labs.eustasy.org/jquery-2.0.3.min.js"><\/script>');</script>
+	<!--<![endif]-->
 	<script src="http://labs.eustasy.org/jquery.tablesorter.min.js"></script>
 	<script>$(document).ready(function() { $("#sort").tablesorter( {sortList: [[1,1], [3,1]]} ); });</script>
 
