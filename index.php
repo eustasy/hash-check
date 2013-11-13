@@ -196,7 +196,7 @@
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="http://labs.eustasy.org/js/jquery-2.0.3.min.js"><\/script>');</script>
 	<!--<![endif]-->
-	<script src="http://labs.eustasy.org/jquery.tablesorter.min.js"></script>
+	<script src="http://labs.eustasy.org/js/jquery.tablesorter.min.js"></script>
 	<script>$(document).ready(function() { $("#sort").tablesorter( {sortList: [[1,1], [3,1]]} ); });</script>
 
 </body>
