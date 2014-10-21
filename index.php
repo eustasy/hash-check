@@ -20,12 +20,12 @@
 	<link rel="shortcut icon" href="http://labs.eustasy.org/favicon.ico">
 
 	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-	  ga('create', 'UA-45667989-11', 'eustasy.org');
-	  ga('send', 'pageview');
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-45667989-11', 'eustasy.org');
+		ga('send', 'pageview');
 	</script>
 
 	<style>
@@ -144,19 +144,27 @@
 		if(
 			$Hash_Algo == 'adler32' ||
 			$Hash_Algo == 'crc32' ||
-			$Hash_Algo == 'crc32b' ) {
+			$Hash_Algo == 'crc32b'
+		) {
 			echo ' class="hi insecure">Warning: Checksum. Not for passwords.';
 		} elseif(
 			$Hash_Algo == 'ripemd128' ||
 			$Hash_Algo == 'ripemd256' ||
-			$Hash_Algo == 'sha1' ) {
+			$Hash_Algo == 'sha1'
+		) {
 			echo ' class="hi insecure">Warning: Questionable Security.';
 		} elseif(
 			$Hash_Algo == 'md2' ||
 			$Hash_Algo == 'md4' ||
 			$Hash_Algo == 'md5' ||
-			$Hash_Algo == 'haval128,3' ) {
+			$Hash_Algo == 'haval128,3'
+		) {
 			echo ' class="hi insecure">Warning: No longer considered secure.';
+		} elseif(
+			$Hash_Algo == 'sha384' ||
+			$Hash_Algo == '256'
+		) {
+			echo ' class="hi good">Good: A shorter, faster version of what we use.';
 		} elseif( $Hash_Algo == 'sha512' ) {
 			echo ' class="hi best">Recommended: We use this.';
 		} elseif( $Hash_Algo == 'whirlpool' ) {
