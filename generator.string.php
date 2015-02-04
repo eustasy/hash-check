@@ -19,7 +19,7 @@ function Generator_String($Length = 64, $Caps = false, $Special = false, $Letter
 		$String_Characters .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 	}
 	if ( $Special ) {
-		$String_Characters .= '`¬!"£$%^&*()_+-={}[]:@~;\'#<>?,./|\\';
+		$String_Characters .= '`¬!"£$%^&*()_+-={}[]:@~;\'#<>?,/|\\';
 	}
 	if ( $Letters ) {
 		$String_Characters .= 'abcdefghijklmnopqrstuvwxyz';
@@ -33,7 +33,9 @@ function Generator_String($Length = 64, $Caps = false, $Special = false, $Letter
 
 	// Iterate the number of letters needed
 	for ( $Iterate = 0; $Iterate < $Length; $Iterate++ ) {
-		$String .= $String_Characters[hexdec(bin2hex(openssl_random_pseudo_bytes(1))) % $String_Characters_Count];
+		$N = intval(floor((hexdec(bin2hex(openssl_random_pseudo_bytes(1)))/256)*$String_Characters_Count));
+		//var_dump($N);
+		$String .= $String_Characters[$N];
 	}
 
 	return $String;

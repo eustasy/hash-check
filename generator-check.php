@@ -4,7 +4,7 @@ ini_set('display_startup_errors',1);
 ini_set('display_errors',1);
 error_reporting(-1);
 
-require __DIR__.'/generator.string.php';
+require __DIR__.'/generator.string.secure.php';
 
 if ( isset($_POST['iterate']) ) {
 	$iterate = intval($_POST['iterate']);
@@ -12,8 +12,14 @@ if ( isset($_POST['iterate']) ) {
 	$iterate = 1000000;
 }
 
+if ( isset($_POST['length']) ) {
+	$length = intval($_POST['length']);
+} else {
+	$length = 2;
+}
+
 for ( $i = 0; $i < $iterate; $i++ ) {
-	$N = Generator_String(1);
+	$N = Generator_String_Secure($length);
 	if ( isset($Results[$N]) ) {
 		$Results[$N]++;
 	} else {
@@ -69,15 +75,28 @@ ksort($Results, SORT_NATURAL);
 <body>
 	<h1>Generator Checker</h1>
 	<form action="" method="POST">
+		<label for="length">Length</label>
+		<input required type="number" name="length" placeholder="2" value="<?php echo !empty($_POST['length']) ? $_POST['length'] : '1'; ?>">
 		<label for="pass">Iterations</label>
 		<input required type="number" name="iterate" placeholder="1000000" value="<?php echo !empty($_POST['iterate']) ? $_POST['iterate'] : '1000000'; ?>">
 		<input type="submit" value="Run">
 	</form>
 	<hr>
 	<?php
-	highlight_string('<?php // Iterate the number of letters needed
-for ( $Iterate = 0; $Iterate < $Length; $Iterate++ ) {
-	$String .= $String_Characters[hexdec(bin2hex(openssl_random_pseudo_bytes(1))) % $String_Characters_Count];
+	highlight_string('<?php
+function Generator_String_Secure($Length = 64) {
+	$String = substr(
+		bin2hex(
+			openssl_random_pseudo_bytes(
+				ceil(
+					$Length / 2
+				)
+			)
+		),
+		0,
+		$Length
+	);
+	return $String;
 }');
 	?>
 
@@ -96,7 +115,7 @@ for ( $Iterate = 0; $Iterate < $Length; $Iterate++ ) {
 			],
 			datasets : [
 				{
-					label: "My Second dataset",
+					label: "Thing",
 					fillColor: "#333",
 					highlightFill: "#666",
 					data : [
@@ -113,7 +132,8 @@ for ( $Iterate = 0; $Iterate < $Length; $Iterate++ ) {
 		}
 		var options = {
 			barShowStroke: false,
-			barValueSpacing: 1,
+			barValueSpacing: 0,
+			barShowLables: false,
 		}
 		var generated = document.getElementById('generated').getContext('2d');
 		new Chart(generated).Bar(generatedData, options);

@@ -5,6 +5,7 @@ ini_set('display_errors',1);
 error_reporting(-1);
 
 require __DIR__.'/generator.string.php';
+require __DIR__.'/generator.string.secure.php';
 
 ?><!DocType html>
 <html>
@@ -108,7 +109,7 @@ if (
 	$hash['iterate'] = intval($_POST['iterate']);
 
 	$hash['pass'] = Generator_String(intval($_POST['pass']), true, true);
-	$hash['salt'] = Generator_String(intval($_POST['salt']), true, true);
+	$hash['salt'] = Generator_String_Secure(intval($_POST['salt']), true, true);
 
 	ob_start();
 	$time['start'] = microtime(true);
