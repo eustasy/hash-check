@@ -55,7 +55,7 @@ require __DIR__.'/generator.string.secure.php';
 	<div class="column-left">
 		<form action="" method="POST">
 			<label for="pass">Password</label>
-			<input required type="number" name="pass" placeholder="10" value="<?php echo !empty($_POST['pass']) ? $_POST['pass'] : '10'; ?>">
+			<input required type="number" name="pass" placeholder="16" value="<?php echo !empty($_POST['pass']) ? $_POST['pass'] : '10'; ?>">
 			<label for="pass">Salt</label>
 			<input required type="number" name="salt" placeholder="64" value="<?php echo !empty($_POST['salt']) ? $_POST['salt'] : '64'; ?>">
 			<label for="pass">Iterations</label>
