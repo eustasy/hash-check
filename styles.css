@@ -1,0 +1,25 @@
+body {
+	max-width: 980px;
+	width: 90%;
+	margin: 5% auto;
+	padding: 0;
+	font: 300 1em/1.4 Ubuntu, 'lucida sans unicode', 'lucida grande', 'Trebuchet MS', verdana, arial, helvetica, helve, sans-serif;
+	text-align: center;
+}
+.description { max-width: 70%; margin: 3% auto; }
+h1 { font-weight: 300; }
+p { text-align: left; }
+a { color: #2980b9; text-decoration: none; }
+code { font-family: 'Ubuntu Mono', monospace; word-wrap: break-word; }
+.caption { font-size: 0.9em; font-style: italic; color: #7f8c8d; text-align: center; }
+table { width: 100%; border-spacing: 0; }
+th { cursor: pointer; font-weight: 300; padding: 20px 10px; }
+thead tr:nth-child(odd) { background: transparent; }
+tr:nth-child(odd) { background: #ecf0f1; }
+td { padding: 10px; font-weight: 300; }
+.hi { color: #fefefe; } 				/* White */
+.insecure { background: #e74c3c; } 	/* Red */
+.good { background: #27ae60; } 		/* Green */
+.best { background: #2980b9; } 		/* Blue */
+.header.headerSortUp:after { content: " ↑"; }
+.header.headerSortDown:after { content: " ↓"; }
