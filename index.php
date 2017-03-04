@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta http-equiv="cleartype" content="on">
 
-	<title>PHP5 Hash Check</title>
+	<title>PHP Hash Check</title>
 
 	<meta name="description" content="A speed benchmark and security comparison for all the available Hash Algorithms for any PHP version >=5.1.2 with advisory notices and assisting rankings.">
 	<meta name="keywords" content="speed benchmark security comparison available Hash Algorithms PHP version >=5.1.2 > = 5.1.2 5 1 2 advisory notices assisting rankings eustasy labs org ltd uk">
@@ -18,7 +18,8 @@
 	<link rel="canonical" href="http://labs.eustasy.org/hash-check/">
 	<link rel="icon" href="http://labs.eustasy.org/favicon.ico">
 	<link rel="shortcut icon" href="http://labs.eustasy.org/favicon.ico">
-
+	<link rel="stylesheet" href="styles.css">
+	
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -46,39 +47,11 @@
 		);
 	</script>
 
-	<style>
-		body {
-			max-width: 980px;
-			width: 90%;
-			margin: 5% auto;
-			padding: 0;
-			font: 300 1em/1.4 Ubuntu, 'lucida sans unicode', 'lucida grande', 'Trebuchet MS', verdana, arial, helvetica, helve, sans-serif;
-			text-align: center;
-		}
-		.description { max-width: 70%; margin: 3% auto; }
-		h1 { font-weight: 300; }
-		p { text-align: left; }
-		a { color: #2980b9; text-decoration: none; }
-		code { font-family: 'Ubuntu Mono', monospace; word-wrap: break-word; }
-		.caption { font-size: 0.9em; font-style: italic; color: #7f8c8d; text-align: center; }
-		table { width: 100%; border-spacing: 0; }
-		th { cursor: pointer; font-weight: 300; padding: 20px 10px; }
-		thead tr:nth-child(odd) { background: transparent; }
-		tr:nth-child(odd) { background: #ecf0f1; }
-		td { padding: 10px; font-weight: 300; }
-		.hi { color: #fefefe; } 				/* White */
-		.insecure { background: #e74c3c; } 	/* Red */
-		.good { background: #27ae60; } 		/* Green */
-		.best { background: #2980b9; } 		/* Blue */
-		.header.headerSortUp:after { content: " ↑"; }
-		.header.headerSortDown:after { content: " ↓"; }
-	</style>
-
 </head>
 <body>
 
 	<div class="description">
-		<h1>PHP5 Hash Check</h1>
+		<h1>PHP Hash Check</h1>
 		<p class="caption">A speed benchmark and security comparison for all the available Hash Algorithms for any PHP version >=5.1.2 with advisory notices and assisting rankings.</p>
 		<br>
 		<p>This page serves to speed benchmark all the available Hash Algorithms for this PHP version (<?php echo phpversion(); ?>). The PHP Script (<a href="https://github.com/eustasy/labs-hash-check">Source available on GitHub</a>) randomly generates a 18 character password and 64 character salt from the following digits.</p>
