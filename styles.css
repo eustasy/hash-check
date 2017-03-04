@@ -1,5 +1,5 @@
 body {
-	font: 300 1em/1.4 Ubuntu, 'lucida sans unicode', 'lucida grande', 'Trebuchet MS', verdana, arial, helvetica, helve, sans-serif;
+	font: 300 1em/1.4 'Ubuntu', 'lucida sans unicode', 'lucida grande', 'Trebuchet MS', 'verdana', 'arial', 'helvetica', 'helve', sans-serif;
 	margin: 5% auto;
 	max-width: 980px;
 	padding: 0;
@@ -35,8 +35,8 @@ th {
 	font-weight: 300;
 	padding: 20px 10px;
 }
-thead tr::nth-child(odd) { background: transparent; }
-tr::nth-child(odd) { background: #ecf0f1; }
+thead tr:nth-child( odd ) { background: transparent; }
+tr:nth-child( odd ) { background: #ecf0f1; }
 td {
 	font-weight: 300;
 	padding: 10px;
