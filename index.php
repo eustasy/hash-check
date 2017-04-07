@@ -18,7 +18,8 @@
 	<link rel="canonical" href="https://labs.eustasy.org/hash-check/">
 	<link rel="icon" href="https://labs.eustasy.org/favicon.ico">
 	<link rel="shortcut icon" href="https://labs.eustasy.org/favicon.ico">
-	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="/assets/css/grid.min.css">
+	<link rel="stylesheet" href="/assets/css/labs.css">
 
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -50,32 +51,38 @@
 </head>
 <body>
 
-	<div class="description">
-		<h1>PHP Hash Check</h1>
-		<p class="caption">A speed benchmark and security comparison for all the available Hash Algorithms for any PHP version >=5.1.2 with advisory notices and assisting rankings.</p>
-		<br>
-		<p>This page serves to speed benchmark all the available Hash Algorithms for this PHP version (<?php echo phpversion(); ?>). The PHP Script (<a href="https://github.com/eustasy/hash-check">Source available on GitHub</a>) randomly generates a 18 character password and 64 character salt from the following digits.</p>
-		<br>
-		<code>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 !"£$%^&*()-_+=|`¬,.<>/?~#[]{}@'\</code>
-		<p class="caption">Like you'd be so lucky as to get a user with a random password generated from these.</p>
-		<br>
-		<p>It then hashes the password and salt, adds the resulting hashes together, then hashes that too (just for good measure). Then it does the whole things again, nine-hundred and ninety-nine more times. The resulting table (shown below) is automatically sorted by Hash Length and Time Taken (both of which are better longer).</p>
-		<br>
-		<code>$Hash_Result = hash( $Hash_Algo, hash( $Hash_Algo, $Pass, false) . hash( $Hash_Algo, $Salt, false ), false );</code>
-		<p class="caption">This is how most of our user logins are handled, so provides a realistic benchmark.</p>
+	<header class="whole grid">
+		<div class="whole smablet-half float-center">
+			<h1>PHP Hash Check</h1>
+			<p class="sub-title">A speed benchmark and security comparison for all the available Hash Algorithms for any PHP version >=5.1.2 with advisory notices and assisting rankings.</p>
+		</div>
+	</header>
+
+	<section class="whole grid">
+		<div class="whole smablet-half">
+			<p class="text-left">This page serves to speed benchmark all the available Hash Algorithms for this PHP version (<?php echo phpversion(); ?>). The PHP Script (<a href="https://github.com/eustasy/hash-check">Source available on GitHub</a>) randomly generates a 18 character password and 64 character salt from the following digits.</p>
+			<br>
+			<code>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 !"£$%^&*()-_+=|`¬,.<>/?~#[]{}@'\</code>
+			<p class="sub-title">Like you'd be so lucky as to get a user with a random password generated from these.</p>
+		</div>
+		<div class="whole smablet-half">
+			<p class="text-left">It then hashes the password and salt, adds the resulting hashes together, then hashes that too (just for good measure). Then it does the whole things again, nine-hundred and ninety-nine more times. The resulting table (shown below) is automatically sorted by Hash Length and Time Taken (both of which are better longer).</p>
+			<br>
+			<code>$Hash_Result = hash( $Hash_Algo, hash( $Hash_Algo, $Pass, false) . hash( $Hash_Algo, $Salt, false ), false );</code>
+			<p class="sub-title">This is how most of our user logins are handled, so provides a realistic benchmark.</p>
+		</div>
 	</div>
 
-	<table id="sort" class="tablesorter">
+	<table id="sort" class="whole tablesorter">
 		<thead>
 			<tr>
 				<th>Hash</th>
 				<th>Length</th>
-				<th>Advisory</th>
 				<th>Timing (&micro;s per thousand)</th>
+				<th>Advisory</th>
 			</tr>
 		</thead>
-		<tbody>
-<?php
+		<tbody><?php
 
 	$Characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 !"£$%^&*()-_+=|`¬,.<>/?~#[]{}@\'\\';
 	$Characters_Count = strlen( $Characters );
@@ -116,11 +123,12 @@
 
 		// Hash Algorithm Output
 		echo '
-		<tr>
-			<td>'.$Hash_Algo.'</td>
-			<td';
+			<tr>
+				<td>'.$Hash_Algo.'</td>';
 
 		// Hash Length Outputs
+		echo '
+				<td';
 		if( $Hash_Length>=128 ) { // Blue
 			echo ' class="hi best"';
 		} else if( $Hash_Length>=64 ) { // Green
@@ -128,10 +136,23 @@
 		} else { // Red
 			echo ' class="hi insecure"';
 		}
-		echo '>'.$Hash_Length.'</td>
-			<td';
+		echo '>'.$Hash_Length.'</td>';
+
+		// Time Output
+		echo '
+				<td';
+		if( $Count>12 ) { // Blue
+			echo ' class="hi best"';
+		} else if( $Count>6 ) { // Green
+			echo ' class="hi good"';
+		} else {
+			echo ' class="hi insecure"';
+		}
+		echo '>'.$Count.'</td>';
 
 		// Advisory Outputs
+		echo '
+				<td';
 		if(
 			$Hash_Algo == 'adler32' ||
 			$Hash_Algo == 'crc32' ||
@@ -167,25 +188,24 @@
 		} else {
 			echo '>';
 		}
-		echo '</td>
-			<td';
-
-		// Time Output
-		if( $Count>12 ) { // Blue
-			echo ' class="hi best"';
-		} else if( $Count>6 ) { // Green
-			echo ' class="hi good"';
-		} else {
-			echo ' class="hi insecure"';
-		}
-		echo '>'.$Count.'</td>
-		</tr>';
+		echo '</td>';
+		echo '
+			</tr>';
 
 	}
 
 ?>
+
 		</tbody>
 	</table>
+
+	<footer>
+		<p>
+			<a href="https://github.com/eustasy/hash-check/blob/master/LICENSE.md">License</a> &nbsp;·&nbsp;
+			<a href="https://github.com/eustasy/hash-check">GitHub</a> &nbsp;·&nbsp;
+			<a href="https://github.com/eustasy/hash-check/releases">Releases</a>
+		</p>
+	</footer>
 
 </body>
 </html>
