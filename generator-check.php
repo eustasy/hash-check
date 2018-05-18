@@ -68,8 +68,7 @@ ksort($Results, SORT_NATURAL);
 			margin: 10vh auto;
 		}
 	</style>
-	<script src='Chart.Core.js'></script>
-	<script src='Chart.Bar.js'></script>
+	<script src="https://cdn.jsdelivr.net/gh/chartjs/Chart.js@2/dist/Chart.bundle.min.js"></script>
 	<title>Generator Checker</title>
 </head>
 <body>
@@ -104,7 +103,7 @@ function Generator_String_Secure($Length = 64) {
 	<canvas id="generated" width="880" height="500"></canvas>
 	<pre><?php var_dump($Results); ?></pre>
 	<script>
-		var generatedData = {
+		var data = {
 			labels : [<?php
 				foreach ( $Results as $Key => $Value ) {
 					echo '
@@ -115,7 +114,7 @@ function Generator_String_Secure($Length = 64) {
 			],
 			datasets : [
 				{
-					label: "Thing",
+					label: "Occurences of Possibility",
 					fillColor: "#333",
 					highlightFill: "#666",
 					data : [
@@ -136,7 +135,11 @@ function Generator_String_Secure($Length = 64) {
 			barShowLables: false,
 		}
 		var generated = document.getElementById('generated').getContext('2d');
-		new Chart(generated).Bar(generatedData, options);
+		var myChart = new Chart(generated, {
+			type: 'bar',
+			data,
+			options
+		});
 	</script>
 </body>
 </html>
