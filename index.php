@@ -158,33 +158,33 @@
 			$Hash_Algo == 'crc32' ||
 			$Hash_Algo == 'crc32b'
 		) {
-			echo ' class="hi insecure">Warning: Checksum. Not for passwords.';
+			echo ' class="hi insecure" data-text="-3">Warning: Checksum. Not for passwords.';
 		} elseif(
 			$Hash_Algo == 'ripemd128' ||
 			$Hash_Algo == 'ripemd256' ||
 			$Hash_Algo == 'sha1'
 		) {
-			echo ' class="hi insecure">Warning: Questionable Security.';
+			echo ' class="hi insecure" data-text="-2">Warning: Questionable Security.';
 		} elseif(
 			$Hash_Algo == 'md2' ||
 			$Hash_Algo == 'md4' ||
 			$Hash_Algo == 'md5' ||
 			$Hash_Algo == 'haval128,3'
 		) {
-			echo ' class="hi insecure">Warning: No longer considered secure.';
+			echo ' class="hi insecure" data-text="-1">Warning: No longer considered secure.';
 		} elseif(
 			$Hash_Algo == 'sha384' ||
 			$Hash_Algo == '256'
 		) {
-			echo ' class="hi good">Good: A shorter, faster version of what we use.';
+			echo ' class="hi good" data-text="1">Good: A shorter, faster version of what we use.';
 		} elseif( $Hash_Algo == 'sha512' ) {
-			echo ' class="hi best">Recommended: We use this.';
+			echo ' class="hi best" data-text="3">Recommended: We use this.';
 		} elseif( $Hash_Algo == 'whirlpool' ) {
-			echo ' class="hi best">Recommended: Based on AES.';
+			echo ' class="hi best" data-text="3">Recommended: Based on AES.';
 		} elseif( $Hash_Algo == 'ripemd320' ) {
-			echo ' class="hi good">Good: Based on original RIPEMD.';
+			echo ' class="hi good" data-text="2">Good: Based on original RIPEMD.';
 		} elseif( $Hash_Algo == 'gost' ) {
-			echo ' class="hi good">Good: Based on DES.';
+			echo ' class="hi good" data-text="2">Good: Based on DES.';
 		} else {
 			echo '>';
 		}
