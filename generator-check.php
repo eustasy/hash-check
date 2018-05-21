@@ -42,7 +42,7 @@ ksort($Results, SORT_NATURAL);
 	<link rel="canonical" href="http://labs.eustasy.org/hash-check/">
 	<link rel="icon" href="http://labs.eustasy.org/favicon.ico">
 	<link rel="shortcut icon" href="http://labs.eustasy.org/favicon.ico">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/g/normalize,colors.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/eustasy/Colors.css@1/colors.min.css,gh/necolas/normalize.css@8/normalize.min.css">
 	<style>
 		body {
 			margin: 10vh auto;
