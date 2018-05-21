@@ -129,9 +129,9 @@
 		// Hash Length Outputs
 		echo '
 				<td';
-		if( $Hash_Length>=128 ) { // Blue
+		if( $Hash_Length >= 128 ) { // Blue
 			echo ' class="hi best"';
-		} else if( $Hash_Length>=64 ) { // Green
+		} else if( $Hash_Length >= 64 ) { // Green
 			echo ' class="hi good"';
 		} else { // Red
 			echo ' class="hi insecure"';
@@ -141,9 +141,9 @@
 		// Time Output
 		echo '
 				<td';
-		if( $Count>12 ) { // Blue
+		if( $Count > 4 ) { // Blue
 			echo ' class="hi best"';
-		} else if( $Count>6 ) { // Green
+		} else if( $Count > 3 ) { // Green
 			echo ' class="hi good"';
 		} else {
 			echo ' class="hi insecure"';
